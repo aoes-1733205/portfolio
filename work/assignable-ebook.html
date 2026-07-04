@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignable Ebook — Alexander Escalera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Alexander Escalera</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:hello@alexanderescalera.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap cs-hero">
+    <div class="cs-kicker">Case study — 03 / 03</div>
+    <h1 class="cs-title">Assignable Ebook</h1>
+    <p class="cs-dek">Integrating accessible, interactive class assessments into an ebook reader used by students nationwide.</p>
+
+    <div class="cs-hero-image" data-expand data-caption="Assignable Ebook — multiple choice frame">
+      <img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774a62491bf2ef67446d778_wwnorton-main.png" alt="Assignable Ebook multiple choice frame">
+    </div>
+
+    <dl class="specsheet">
+      <div><dt>Company</dt><dd>W. W. Norton &amp; Co.</dd></div>
+      <div><dt>Timeline</dt><dd>Feb – May 2022</dd></div>
+      <div><dt>Role</dt><dd>UX Designer &amp; Researcher, with 2 designers</dd></div>
+      <div><dt>Services</dt><dd>Competitor Analysis, UX, Interviews, Testing</dd></div>
+      <div><dt>Stack</dt><dd>Adobe XD, Axure, SurveyMonkey</dd></div>
+    </dl>
+  </section>
+
+  <article class="cs-body">
+    <p>Education is one of the highest-stakes categories for usability — more tools are being built for it every year, for students of every ability. W. W. Norton was updating its ebook reader for greater accessibility and adding features letting professors assign interactive content, like multiple-choice questions, directly inside the reader. I worked with the team to design the multiple-choice frames for the Assignable Ebook tool.</p>
+
+    <h2>Requirements</h2>
+    <p>Stakeholders and product owners gave us user stories with defined acceptance criteria. Prior research told us we'd need to support screen magnifiers, so we added accessibility-specific stories, and worked with a UX copywriter and accessibility consultant from day one to keep language and accessibility front-of-mind.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="User stories"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774dbd1a106db596f569601_userstories.png" alt="User stories document"></figure>
+    </div>
+
+    <h2>Competitor analysis</h2>
+    <p>I compared how tools like Canvas, Duolingo, and Pluralsight handled multiple-choice questions — labeling of answer options, feedback patterns, and accessibility features like issue reporting. Khan Academy came out ahead on the criteria that mattered most for our user stories.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Competitor analysis"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774dfb3db306355d8e4c856_Screenshot%202024-12-31%20222313.png" alt="Competitor analysis screenshot"></figure>
+    </div>
+
+    <h2>Initial designs</h2>
+    <p>Key features we needed: labeled answer choices, a visible due date, and a report-issue button, plus feedback shown inside the frame. I explored two directions — feedback at the bottom of the frame, and a 2×2 layout showing feedback next to the selected answer.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Concept 2, screen 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774e44a0617c7701b4ed923_Concept%202%201.png" alt="Concept 2 screen 1"></figure>
+      <figure data-expand data-caption="Concept 2, screen 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774e44a1d3652e7a04ce4ec_Concept%202%202.png" alt="Concept 2 screen 2"></figure>
+      <figure data-expand data-caption="Concept 3, screen 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774e44ae676f1d028e113da_Concept%203%201.png" alt="Concept 3 screen 1"></figure>
+      <figure data-expand data-caption="Concept 3, screen 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774e44bfbea0989c46ecbcd_Concept%203%202.png" alt="Concept 3 screen 2"></figure>
+    </div>
+    <p>Team feedback narrowed the direction: the 2×2 layout couldn't accommodate image-based answer choices; questions needed either answer-specific or general feedback, never both; icon-only feedback needed labels; and inline feedback caused problems for magnifier focus order while eating into already-tight screen space.</p>
+
+    <h2>Iteration</h2>
+    <p>I kept a vertical layout, labeling the correct response after submission and moving all response feedback to the bottom of the frame for clarity.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Iteration 1, screen 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774f2ff4f4ca09c6c8fd2ac_Iteration%201%201.png" alt="Iteration 1 screen 1"></figure>
+      <figure data-expand data-caption="Iteration 1, screen 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774f300d5090b1b4ded928d_Iteration%201%202.png" alt="Iteration 1 screen 2"></figure>
+    </div>
+
+    <h2>Final design</h2>
+    <p>Working with the other designers, we moved feedback into its own modal rather than a fixed spot in the frame — more accessible for screen readers, since it registers as a distinct screen, and clearer for everyone since it can use the full frame without competing with other elements.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Final frame design"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774f44629d8b69c20222873_frame.png" alt="Final frame design"></figure>
+      <figure data-expand data-caption="Feedback modal in context"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6774f4739be5d15ac17e2802_Feedback%202.png" alt="Feedback modal in ebook context"></figure>
+    </div>
+    <p>Developers and product owners signed off on both feasibility and story coverage.</p>
+
+    <h2>User research</h2>
+    <p>With the MVP timeline tight, we tested the whole Assignable Ebook experience — not just the multiple-choice frames — with 6 students, giving ourselves two weeks to recruit and one week to run all sessions.</p>
+    <p>I wrote a recruiting survey served to every student loading their Norton ebook for the first time. It ran for three days and drew <strong>5,164 responses</strong>, screening for relevant assignments and including an open-ended question to gauge how descriptive candidates could be.</p>
+
+    <h2>Usability tests</h2>
+    <p>Six one-hour sessions covered language inside the interactive frame and how well the "completed" state helped students find their way back to a finished question. I built a heatmap from the session recordings to visualize where people succeeded or struggled.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Usability test heatmap"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6775f4ce906cb8afff1877d3_heatmap.png" alt="Usability test heatmap"></figure>
+    </div>
+
+    <h2>Results</h2>
+    <div class="stat-row">
+      <div><div class="stat-num">6/6</div><div class="stat-label">Passed MC question tasks</div></div>
+      <div><div class="stat-num">~95%</div><div class="stat-label">Overall task pass rate</div></div>
+      <div><div class="stat-num">5,164</div><div class="stat-label">Recruiting survey responses</div></div>
+    </div>
+    <p>All six students completed the multiple-choice tasks, though several struggled to navigate to them within the ebook. Feedback also pointed to unclear icons in the assignment overview, confusing language in the confirmation modal and LMS badge, and a need to reorganize the assignment overview so completion status was easier to parse.</p>
+    <p>One surprise: students wanted labeled navigation icons — something I'd underestimated going in, despite my own experience as a recent student. It reinforced a lesson I already knew in theory: icons need labels, especially in a collapsed nav.</p>
+
+    <h2>Conclusion</h2>
+    <p>Three fast-moving months sharpened my ideation, wireframing, and prototyping — and this was the first time I wrote a full UI specification. Writing the usability script from scratch, while working from our requirements, took real focus, but our participants were thorough and generous with feedback. Designing for students, as a recent student myself, gave me an unusually direct line to the user's perspective — and working alongside an accessibility specialist taught me more than I expected about designing for magnifiers and screen readers.</p>
+  </article>
+
+  <nav class="wrap cs-nav">
+    <a href="maxis-consumers.html">← Previous: Maxis Consumers</a>
+    <a href="/#work">Back to all work →</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-links">
+      <a href="mailto:hello@alexanderescalera.com">Email</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+      <a href="#">Resume</a>
+    </div>
+    <div class="footer-note">© 2026 Alexander Escalera</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close">Close ✕</button>
+  <img src="" alt="">
+  <div class="lightbox-cap"></div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

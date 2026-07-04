@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Catalog — Alexander Escalera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Alexander Escalera</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:hello@alexanderescalera.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap cs-hero">
+    <div class="cs-kicker">Case study — 01 / 03</div>
+    <h1 class="cs-title">Data Catalog</h1>
+    <p class="cs-dek">Improving efficiency for data discovery and app development during General Motors' migration to the cloud.</p>
+
+    <div class="cs-hero-image" data-expand data-caption="Data Catalog — homepage">
+      <img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67737eb77cba2dd14ae53744_data-catalog-main.png" alt="Data Catalog homepage screen">
+    </div>
+
+    <dl class="specsheet">
+      <div><dt>Company</dt><dd>General Motors</dd></div>
+      <div><dt>Timeline</dt><dd>Oct – Dec 2023</dd></div>
+      <div><dt>Role</dt><dd>UX Designer &amp; Researcher, with 2 designers</dd></div>
+      <div><dt>Services</dt><dd>User Interviews, UX/UI Design, Usability Testing</dd></div>
+      <div><dt>Stack</dt><dd>Figma, Databricks, Illustrator</dd></div>
+    </dl>
+  </section>
+
+  <article class="cs-body">
+    <p>With General Motors' transition to the cloud, much of the company's data began migrating from local servers to a mix of cloud providers. Our team needed to understand the challenges of that transition and build a tool to help people find the data they needed. I worked alongside two other UX designers, and led the project from ideation through the final high-fidelity prototype.</p>
+
+    <h2>User problems</h2>
+    <ul>
+      <li><strong>No centralized data catalog for all of GM.</strong> Data lived on local servers or across providers like AWS and Azure, with no single index.</li>
+      <li><strong>Unclear limitations and resources.</strong> There was little documentation on requesting access, subscriptions, or repos.</li>
+      <li><strong>No coding standards or cost structure.</strong> This left a lot of room for error, driving up costs and triggering warnings.</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <p>A central hub for data exploration — documenting available datasets and metadata like location, descriptions, lineage, and usage instructions, alongside clear onboarding guidance for cloud providers and coding standards for cost efficiency. Together, these features were built to save people time and keep development costs down.</p>
+
+    <h2>User interviews</h2>
+    <p>The primary users were data scientists and developers at GM. I wrote a script for semi-structured interviews to understand which data tools they used and how — 13 participants across 4 user types, recruited directly from target organizations.</p>
+    <div class="stat-row">
+      <div><div class="stat-num">5</div><div class="stat-label">Leads</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Data Scientists</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Engineers</div></div>
+      <div><div class="stat-num">2</div><div class="stat-label">Developers</div></div>
+    </div>
+
+    <h2>Results</h2>
+    <p>Getting access to data could take months, sending people in circles to find an approver. Teams moving to the cloud weren't given the support or guidelines they needed, and were still ramping up costs without proper flows in place for resources like CPU.</p>
+    <p>I organized the interview notes into an affinity map by likes, dislikes, and needs, which made the findings far easier to act on. One surprise: most users were already on Databricks despite the recent push to the cloud — I'd assumed more people would still be on-prem.</p>
+
+    <figure class="gallery cols-1">
+      <div data-expand data-caption="Affinity map of user interview findings">
+        <img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773ce358f9d17dcb8ce48eb_affinity-map.png" alt="Affinity map">
+      </div>
+    </figure>
+
+    <h2>Personas</h2>
+    <p>From the affinity mapping, I distilled the research into three personas that guided the rest of the design process.</p>
+    <div class="gallery cols-3">
+      <figure data-expand data-caption="Persona 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773cffece506fdfa8583052_UX%20Persona-1.svg" alt="UX Persona 1"></figure>
+      <figure data-expand data-caption="Persona 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773cffea2f96cd0f8c413b4_UX%20Persona.svg" alt="UX Persona 2"></figure>
+      <figure data-expand data-caption="Persona 3"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773cffeb06d560975da42d0_UX%20Persona-2.svg" alt="UX Persona 3"></figure>
+    </div>
+
+    <h2>Assumption mapping</h2>
+    <p>GM as a whole still lacked information about working with cloud data, so I mapped out where we were making assumptions — helping us decide which features were most desirable and feasible, and where we needed to collaborate with other teams to fill gaps.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Assumption mapping"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773d4cb02096e83a1eb91cc_assumption-mapping.png" alt="Assumption mapping"></figure>
+    </div>
+
+    <h2>Stakeholder workshop</h2>
+    <p>Before continuing, we confirmed the vision, goals, and high-level features with stakeholders. I helped prepare and lead a two-day workshop — organizing an agenda around Data Discovery, Data Marketplace, SQLGPT & existing products, and future products — with How-Might-We questions for each topic and sticky-note responses from the full team, including our director.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Stakeholder workshop"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773d7dcce506fdfa85f466b_workshop.png" alt="Stakeholder workshop"></figure>
+    </div>
+    <div class="callout"><strong>Outcome —</strong> Stakeholder buy-in increased noticeably; the workshop produced a finalized list of required features plus open questions (like data-domain groupings) still to research.</div>
+
+    <h2>User flows</h2>
+    <p>With required features finalized, I mapped current- and future-state user flows for each persona and use case, marking key steps in purple and open questions in red. This snippet shows one of the more extensive future-state flows — the <a href="https://www.figma.com/design/4Is24cG3wFis3Y0wNafMKf/Data-Catalog-User-Flows?node-id=0-1&t=dG1VHx5EXQqGDrXs-1" target="_blank" rel="noopener">full set is on Figma</a>.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Future-state user flow"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677483f5adbfc2494277e655_user-flow%201.png" alt="User flow diagram"></figure>
+    </div>
+
+    <h2>Inspiration &amp; sketching</h2>
+    <p>I looked at comparable products to inform direction, then moved into Crazy 8's sketching once the research, requirements, and flows were settled.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Inspiration research"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773dd70ac51fe188ef05820_inspo.png" alt="Inspiration board"></figure>
+      <figure data-expand data-caption="Crazy 8's sketches"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773df6aae7f826fde261ea8_crazy-8s.png" alt="Crazy 8s sketches"></figure>
+    </div>
+
+    <h2>Information architecture</h2>
+    <p>Sketching revealed we still lacked clarity on metadata for the data-item page. I met with stakeholders across adjacent teams to lock down the requirements, then organized an IA chart to visualize the final structure.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Information architecture"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6773e0f169e9acd79f9f5ecd_Information%20Architecture.png" alt="Information architecture chart"></figure>
+    </div>
+
+    <h2>Low fidelity</h2>
+    <p>Wireframes focused on short navigation paths and clear search/filtering. Teammates voted on the directions to carry into high fidelity.</p>
+    <p><strong>Home page</strong> — one option with extra top tabs, one with a side nav.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Homepage option 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747a32303c74e278633007_homepage-1.svg" alt="Homepage wireframe option 1"></figure>
+      <figure data-expand data-caption="Homepage option 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747de8a1c72a0a61b15400_homepage-2.svg" alt="Homepage wireframe option 2"></figure>
+    </div>
+    <p><strong>Data search page</strong> — one grouped by category with suggested searches, one with filters and a flat list.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Search page option 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747ec9e0b6243125039a7b_data-search-1.svg" alt="Data search wireframe option 1"></figure>
+      <figure data-expand data-caption="Search page option 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747ec8b69ce0e47ec18ab6_data-search-2.svg" alt="Data search wireframe option 2"></figure>
+    </div>
+    <p><strong>Data item page</strong> — three options varying the order of information and features like use cases and sample queries.</p>
+    <div class="gallery cols-3">
+      <figure data-expand data-caption="Data item option 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67748064212ba1010b4ab5c2_data-item-1.svg" alt="Data item wireframe option 1"></figure>
+      <figure data-expand data-caption="Data item option 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67748064f49ea749485d2081_data-item-2.svg" alt="Data item wireframe option 2"></figure>
+      <figure data-expand data-caption="Data item option 3"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67748064f1e3d4fe92453a21_data-item-3.svg" alt="Data item wireframe option 3"></figure>
+    </div>
+
+    <h2>High fidelity</h2>
+    <p>We settled on a light, subtle theme — appropriate for the density of information and quietly reinforcing GM's brand through a blue palette without overwhelming users with color.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Color palette"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677a29779e72778800930f8e_Colors.svg" alt="Color palette"></figure>
+    </div>
+    <p>After finalizing the prototype, I ran 4 usability tests with users from the original interviews — feedback on filters and metadata organization is already reflected below. Using auto-layout, components, and Dev Mode kept handoff to engineering fast.</p>
+
+    <p><strong>Home page</strong> — search and filters, with the ability to save filter sets and clear them, plus a domains dropdown for browsing by group.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Home page, filters opened"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747a33d9fb4f1536f131dd_Home%20Page%20-%20filters%20opened.svg" alt="Home page with filters opened"></figure>
+    </div>
+    <p><strong>Search page</strong> — a toggleable filter panel and sorting by popularity, date added, or alphabetical order.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Search results, filters opened"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67747ab1f3086097e37e1787_Search%20Results_%20filters%20opened.svg" alt="Search results with filters opened"></figure>
+    </div>
+    <p><strong>Data item page</strong> — description, data profile, and lineage, with collapsible sections so owners can edit metadata without cluttering the page for everyone else.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Data item page"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677475c6d9fb4f1536ef4dfd_Data%20Page%20(1).png" alt="Data item page"></figure>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>The Data Catalog is currently in development, with v1 soon to launch. It was the first project I carried from idea to development at GM — I wasn't able to see it ship, but I presented the final designs at our org's all-hands, and users were excited about the time the search and item-page information would save them.</p>
+    <p>Getting the information and feedback I needed despite communication barriers and siloing across a large IT organization meant staying close to my manager and PM through standups and extra syncs. I came in without cloud-space knowledge, so a lot of this project was building that technical fluency alongside the design work. If I could change one thing, I'd have run usability tests earlier in the process.</p>
+  </article>
+
+  <nav class="wrap cs-nav">
+    <a href="/#work">← Back to work</a>
+    <a href="maxis-consumers.html">Next: Maxis Consumers →</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-links">
+      <a href="mailto:hello@alexanderescalera.com">Email</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+      <a href="#">Resume</a>
+    </div>
+    <div class="footer-note">© 2026 Alexander Escalera</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close">Close ✕</button>
+  <img src="" alt="">
+  <div class="lightbox-cap"></div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

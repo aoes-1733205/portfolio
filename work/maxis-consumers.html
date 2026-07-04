@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxis Consumers — Alexander Escalera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Alexander Escalera</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:hello@alexanderescalera.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap cs-hero">
+    <div class="cs-kicker">Case study — 02 / 03</div>
+    <h1 class="cs-title">Maxis Consumers</h1>
+    <p class="cs-dek">Increasing usage of an enterprise data-analysis reporting tool through targeted usability fixes.</p>
+
+    <div class="cs-hero-image" data-expand data-caption="Maxis Consumers — dashboard">
+      <img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/673ae05bae43e8fa0c1cab68_consumers-thumbnail.svg" alt="Maxis Consumers dashboard screen">
+    </div>
+
+    <dl class="specsheet">
+      <div><dt>Company</dt><dd>General Motors</dd></div>
+      <div><dt>Timeline</dt><dd>May – Aug 2023</dd></div>
+      <div><dt>Role</dt><dd>Led usability testing &amp; design</dd></div>
+      <div><dt>Services</dt><dd>Heuristic Eval, Usability Testing, UX/UI</dd></div>
+      <div><dt>Stack</dt><dd>Adobe XD, FigJam</dd></div>
+    </dl>
+  </section>
+
+  <article class="cs-body">
+    <p>Maxis Consumers is an enterprise tool at General Motors used internally to view data reports, create Meetups, and download data dictionaries. It had gone months without updates due to shifting team priorities — this project was our chance to finally improve it. It was also my first project on the team: I designed independently, in close collaboration with project managers and developers.</p>
+
+    <h2>Usability testing</h2>
+    <p>I ran a heuristic evaluation of the entire site and reviewed support tickets submitted since the last update, then wrote a structured script covering every feature. To recruit, I asked developers for a list of power users pulled from clickstream data — 12 moderated usability tests in total.</p>
+    <p>Notes were summarized in FigJam and distilled into two personas.</p>
+
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="List of prioritized changes"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677b87f14b270850a98ad352_Changes.svg" alt="List of prioritized changes"></figure>
+    </div>
+
+    <div class="callout"><strong>Operations Engineer —</strong> searches reports relevant to her role and creates Meetups, but found the number of Meetup filters overwhelming and the creation form's directions and error states unclear.</div>
+    <div class="callout"><strong>Data Analyst —</strong> updates data directly for popular reports and knows exactly what he's searching for, but had no way to organize favorites, wanted faster report updates, and couldn't search Meetups by language or tag.</div>
+
+    <h2>Low fidelity</h2>
+    <p>After gathering inspiration from comparable tools, I sketched wireframes for the highest-priority changes.</p>
+    <p><strong>Meetup filters</strong> — tucked behind a button instead of always-visible, since the always-on tags were overwhelming users.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Meetup filters wireframe"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677674f7dcce12c452ec964e_meetups%203.png" alt="Meetup filters wireframe"></figure>
+    </div>
+    <p><strong>Create a Meetup</strong> — switched a vertical stepper to a horizontal one at top to save space, reordered the time/date selectors to prevent errors, and added an explicit "Add" button plus instructions for tagging, for accessibility.</p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Create Meetup form 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677674c2540f23132b213049_meetups%20form%201.png" alt="Create Meetup wireframe 1"></figure>
+      <figure data-expand data-caption="Create Meetup form 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677674c2b0e8fc2b89573036_meetups%20form%202.png" alt="Create Meetup wireframe 2"></figure>
+      <figure data-expand data-caption="Create Meetup form 3"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677674c2242e3ac1e66aed4d_meetups%20form%203.png" alt="Create Meetup wireframe 3"></figure>
+      <figure data-expand data-caption="Create Meetup form 4"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677674c2363bbc4bea98e90f_meetups%204.png" alt="Create Meetup wireframe 4"></figure>
+    </div>
+
+    <h2>High fidelity</h2>
+    <p>Final designs were built in Adobe XD, following the product's existing design system.</p>
+    <p><strong>Reorder favorites</strong> — a new homepage feature letting users group and drag reports into a custom order, so they don't have to fall back on browser bookmarks to find what they use most. <a href="https://www.figma.com/proto/V7t8k1x4AjjTnJGh3pow2O/Consumers?node-id=297-13&t=qfv0mFzSoeGMeE6Y-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=297%3A13&show-proto-sidebar=1" target="_blank" rel="noopener">Full prototype on Figma →</a></p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="1. New homepage with reorder and new group"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67767e441c184d367be33a56_reorder-1.png" alt="Reorder favorites homepage"></figure>
+      <figure data-expand data-caption="2. Creating a new group"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67767e44bc6b7d4fac57d716_reorder-2.png" alt="Creating a new favorites group"></figure>
+      <figure data-expand data-caption="3. Drag tiles into new group"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67767e44c27feba0382195ff_reorder%203.png" alt="Dragging tiles into a group"></figure>
+      <figure data-expand data-caption="4. Changes saved"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67767e44cced5bb6e1f7fd61_reorder%204.png" alt="Favorites changes saved"></figure>
+    </div>
+
+    <p><strong>Create a Meetup</strong> — stayed close to the low-fidelity direction, adding recommended tags alongside the explicit "Add" button. <a href="https://www.figma.com/proto/V7t8k1x4AjjTnJGh3pow2O/Consumers?node-id=0-1&p=f&t=g41Hg4crxEKZznM5-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=213%3A77&show-proto-sidebar=1" target="_blank" rel="noopener">Full prototype on Figma →</a></p>
+    <div class="gallery cols-2">
+      <figure data-expand data-caption="Create Meetup 1"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/6776857dcca6a05e5ab9bc43_create1%20(1).png" alt="Create meetup final 1"></figure>
+      <figure data-expand data-caption="Create Meetup 2"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67768532ebcd962567b9972f_create2.png" alt="Create meetup final 2"></figure>
+      <figure data-expand data-caption="Create Meetup 3"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67768532720484b8b8c7dc49_create3.png" alt="Create meetup final 3"></figure>
+      <figure data-expand data-caption="Create Meetup 4"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/67768533172cb3537fb31bca_create4.png" alt="Create meetup final 4"></figure>
+    </div>
+
+    <p><strong>Meetup filters</strong> — filters live in a dismissible frame; selected tags stay visible outside it even when the frame is closed.</p>
+    <div class="gallery cols-1">
+      <figure data-expand data-caption="Meetup filters, final"><img src="https://cdn.prod.website-files.com/673acf21dbf3114706fc6fd6/677a33874047478729133bdf_meetup%20filters.png" alt="Meetup filters final design"></figure>
+    </div>
+
+    <h2>Results</h2>
+    <p>The updated designs shipped by the end of August 2023.</p>
+    <div class="stat-row">
+      <div><div class="stat-num">+2,000</div><div class="stat-label">New users (20k → 22k)</div></div>
+      <div><div class="stat-num">+20%</div><div class="stat-label">Meetup attendance</div></div>
+      <div><div class="stat-num">10%</div><div class="stat-label">Overall usage increase</div></div>
+    </div>
+    <p>More users started accessing reports directly from the dashboard rather than relying on browser bookmarks for their most-used report, thanks to the new favorites reordering.</p>
+
+    <h2>Conclusion</h2>
+    <p>I tried to account for every use case, but feasibility meant real trade-offs — I originally wanted favorites to autosave, but after talking with developers, added a manual save prompt instead. We also couldn't address every item on the change list; where an interactive walkthrough wasn't feasible, I updated the help guide instead. This was my first time leading and working independently on a team, and I was glad the final designs held up against everything our usability tests surfaced.</p>
+  </article>
+
+  <nav class="wrap cs-nav">
+    <a href="data-catalog.html">← Previous: Data Catalog</a>
+    <a href="assignable-ebook.html">Next: Assignable Ebook →</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-links">
+      <a href="mailto:hello@alexanderescalera.com">Email</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+      <a href="#">Resume</a>
+    </div>
+    <div class="footer-note">© 2026 Alexander Escalera</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close">Close ✕</button>
+  <img src="" alt="">
+  <div class="lightbox-cap"></div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
