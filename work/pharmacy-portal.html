@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mochi Pharmacy Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="../assets/images/favicon/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Alexander Escalera</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="nav">
+      <a href="/#work">Work</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:hello@alexanderescalera.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap cs-hero">
+    <div class="cs-kicker">Case study — 01 / 04</div>
+    <h1 class="cs-title">Pharmacy Portal V3</h1>
+    <p class="cs-dek">Building inventory management and two-stage order verification into Mochi Health's pharmacy portal — replacing a third-party fulfillment tool that pharmacies were bouncing to mid-workflow.</p>
+
+    <div class="cs-hero-image fit-content" data-expand data-caption="Pharmacy Portal — inventory overview">
+      <img src="../assets/images/pharmacy-portal/batches-tab-main.png" alt="Pharmacy Portal — inventory overview">
+    </div>
+
+    <dl class="specsheet">
+      <div><dt>Company</dt><dd>Mochi Health</dd></div>
+      <div><dt>Timeline</dt><dd>Oct-Dec 2025</dd></div>
+      <div><dt>Role</dt><dd>Product Design Lead</dd></div>
+      <div><dt>Team</dt><dd>PM + 2 Engineers, with a pharmacy consultant &amp; legal advisor</dd></div>
+      <div><dt>Tasks</dt><dd>End-to-end journey design, Competitor Analysis, User Interviews, AI-assisted prototyping</dd></div>
+    </dl>
+  </section>
+
+  <article class="cs-body">
+    <p>As Mochi Health scaled its pharmacy network, partner pharmacies were still bouncing between Lifefile and other third-party tools to fulfill, verify, and ship Mochi orders. Some partner pharmacies told us directly that switching software mid-workflow was the biggest drag on their turnaround time, and an NPS survey across our broader pharmacy base backed it up, with recurring requests for inventory tracking and a real verification workflow inside our own portal.</p>
+    <p>V3 of the Pharmacy Portal set out to let pharmacies track GLP-1 inventory, assign orders to batches, and let pharmacists complete a Drug Use Review (DUR) all in one system, replacing the need for 3rd party tools for Mochi orders, and laying the groundwork for the portal to handle orders from any provider, not just Mochi.</p>
+
+    <h2>Role &amp; team</h2>
+    <p>The team for this project consisted of a Project Manager, the engineering lead, and me, assisted by a pharmacy consultant and legal reviewer for all compliance requirements, such as batch data fields and verification requirements. I brought engineering in early rather than at handoff. The backend had specific constraints around how medication dosing was modeled, and catching that mismatch during design meant we avoided a late-stage rework (more on this below).</p>
+
+    <h2>Discovery</h2>
+    <p>I led discovery in two parts: understanding how pharmacy software works today, and understanding how our partner pharmacies actually work.</p>
+
+    <h3>Competitive &amp; cross-industry research</h3>
+    <p>I first audited pharmacy-specific tools (Lifefile, PioneerRx) and found that nearly all of them supported prescription verification, but almost none had inventory management. To solve that part of the problem, I looked outside of healthcare products, studying how DoorDash, Amazon, and Shopify structure inventory — a product/catalog table paired with a separate stock table, each stock row tied back to a product ID.</p>
+    <details class="table-expand">
+      <summary>Seller portal competitor analysis</summary>
+      <div class="table-scroll">
+        <table class="cs-table">
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Amazon</th>
+              <th scope="col">Doordash</th>
+              <th scope="col">Shopify</th>
+              <th scope="col">Square</th>
+              <th scope="col">Squarespace</th>
+              <th scope="col">Stripe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Fees</th>
+              <td><p>$39.99 per month if you have active listings</p></td>
+              <td><p>15% to 30% commission fee</p></td>
+              <td>
+                <ul>
+                  <li>$1 any plan for the first 3 months</li>
+                  <li>$39 for basic or $399 for advanced</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>$0 plan up to $149</li>
+                  <li>2.6% + $0.15 or 3.3% + $0.30 online</li>
+                  <li>Optional hardware, one-time purchase</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>$16 to $99 plans</li>
+                  <li>Processing of 2.9% to 2.5% + $0.30</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>No setup or monthly fees</li>
+                  <li>2.9% + $0.30 processing fee</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Ease of use</th>
+              <td>
+                <p>Straightforward, some steps had multiple pages though.</p>
+                <p>Probably has the most detail/steps for adding products and signing up.</p>
+              </td>
+              <td><p>Quick setup and sign up.</p></td>
+              <td><p>One of the bigger platforms — setup guide was decent, but adding products was hard to find since the guide promoted pre-made AI list plugins.</p></td>
+              <td>
+                <p>Nice that you can edit tables directly.</p>
+                <p>Adding items was fairly simple.</p>
+                <p>Seems like there are more features that can get complex, though.</p>
+              </td>
+              <td><p>Fastest setup if a website template is used, but adding items felt a bit too segmented.</p></td>
+              <td>
+                <p>A lot of features, very in-depth.</p>
+                <p>Only one that allows test accounts and sandbox mode.</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Onboarding / sign-up</th>
+              <td>
+                <p>3 main steps:</p>
+                <ul>
+                  <li>Entering store details</li>
+                  <li>Enter and upload personal info</li>
+                  <li>Wait for someone to verify</li>
+                </ul>
+                <p>4-step guide.</p>
+              </td>
+              <td>
+                <p>5-step flow:</p>
+                <ul>
+                  <li>How to receive orders</li>
+                  <li>Store hours</li>
+                  <li>Menu</li>
+                  <li>Pick a plan</li>
+                  <li>Verify payout info</li>
+                </ul>
+              </td>
+              <td>
+                <p>3 cards/forms to fill out about business details.</p>
+                <p>Setup guide with 7 steps, including:</p>
+                <ul>
+                  <li>Add products</li>
+                  <li>Customize website</li>
+                </ul>
+              </td>
+              <td>
+                <p>5 questions.</p>
+                <p>A form with multiple pages, one question per page.</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Set business details</li>
+                  <li>Pick a website template</li>
+                  <li>3 main steps in setup guide</li>
+                </ul>
+              </td>
+              <td>
+                <p>Quick initial form:</p>
+                <ul>
+                  <li>Business name</li>
+                  <li>Goals/shortcuts</li>
+                </ul>
+                <p>7-step setup guide similar to Shopify (verifying business, etc.)</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Adding products</th>
+              <td>
+                <p>Generate sheets to upload a lot of products.</p>
+                <p>In-depth form for products.</p>
+                <p>Option to add variants.</p>
+              </td>
+              <td>
+                <p>Simpler process:</p>
+                <ul>
+                  <li>Name</li>
+                  <li>Prices</li>
+                  <li>Description</li>
+                  <li>Category</li>
+                </ul>
+                <p>Not exactly a variants option.</p>
+              </td>
+              <td>
+                <p>Form with description, ID, quantity, price.</p>
+                <p>Add categories, which can then be used as variants.</p>
+                <p>Images for variants possible.</p>
+              </td>
+              <td>
+                <p>Form with description, ID, quantity, price.</p>
+                <p>Short subform for creating variants.</p>
+                <p>Can use a CSV to upload multiple.</p>
+              </td>
+              <td>
+                <p>Form like the others:</p>
+                <ul>
+                  <li>Item type</li>
+                  <li>Name</li>
+                  <li>Price</li>
+                  <li>Option to add variants</li>
+                </ul>
+              </td>
+              <td><p>Similar form, pretty simple, but no option to make variants — each product is its own store item/table row.</p></td>
+            </tr>
+            <tr>
+              <th scope="row">Dashboard / metrics</th>
+              <td>
+                <p>A lot of tabs and graphs.</p>
+                <p>Filters for different views and stuff.</p>
+              </td>
+              <td>
+                <p>Metrics on how to improve:</p>
+                <ul>
+                  <li>What's going well</li>
+                  <li>What's not going well</li>
+                </ul>
+              </td>
+              <td>
+                <p>Lots of graphs:</p>
+                <ul>
+                  <li>Order value</li>
+                  <li>Total sales over time</li>
+                  <li>Sales breakdown table</li>
+                </ul>
+              </td>
+              <td>
+                <p>Inventory metrics:</p>
+                <ul>
+                  <li>Net sales graph</li>
+                  <li>Metrics and percentages</li>
+                </ul>
+              </td>
+              <td>
+                <p>Graphs for:</p>
+                <ul>
+                  <li>Traffic</li>
+                  <li>Engagement</li>
+                  <li>Sales</li>
+                </ul>
+              </td>
+              <td>
+                <p>All graphs.</p>
+                <p>Date range filters.</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Other</th>
+              <td><p>Nice intro page that shows you what you'll need to do — a little misleading though, since it felt like more.</p></td>
+              <td><p>Didn't finish the sign-up, but someone from Doordash reached out to offer a call/help.</p></td>
+              <td><p>—</p></td>
+              <td><p>Customer messaging.</p></td>
+              <td><p>—</p></td>
+              <td><p>Testing environment for making payments, and more.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <p>That pattern mapped cleanly onto our existing Formulary feature, which already served as our version of a product catalog. Translating a familiar e-commerce pattern into a pharmacy batch-tracking model gave engineering a data structure they could actually build against, and gave pharmacists a mental model they already work with from other software.</p>
+
+    <h2>Validation</h2>
+    <h3>Ethnographic interviews</h3>
+    <p>Using the competitor analysis and prior user research, I put together initial designs to show pharmacies during interviews, since they prefer having a visual to go off of. I conducted semi-structured interviews with pharmacists at four pharmacies, each in a different state, since pharmacy regulations vary by state. I showed my initial designs at the end of each interview rather than the start, so their answers about their current process weren't influenced by what I'd already built. Each session ran about an hour and covered their real fulfillment, verification, and inventory workflows.</p>
+    <div class="callout"><strong>Key finding —</strong> every pharmacy we talked to ran an informal data verification step (technician-level, checking dosage/medication sense against the patient) before the legally required product verification (pharmacist-level, checking the filled product against the prescription right before shipping). My original design had treated these as one step; the research showed they needed to be distinct stages in the workflow.</div>
+    <p>Other requests that came out of research:</p>
+    <ul>
+      <li>Better inventory reporting</li>
+      <li>Low-inventory alerts</li>
+      <li>Removing pharmacy license upload friction</li>
+      <li>The ability to delete stale orders</li>
+    </ul>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Pharmacy%20User%20Interviews%20Analysis%20-%20Summary.png" alt="Pharmacy user interviews analysis summary">
+    </div>
+    <h2>Final Designs</h2>
+
+    <h3>Add inventory</h3>
+    <p>To add new inventory, a set of fields need to be filled out in a modal. I partnered closely with one of our pharmacy consultants and the legal team to learn what fields were required, and validated those with the pharmacies as well.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/New%20batch%20-%20filled%20modal.png" alt="Add inventory modal">
+    </div>
+
+    <h3>Inventory table</h3>
+    <p>On the inventory tab, I created a table showing the amount for each row and its status. Pharmacies add a batch, and once it's compounded, a pharmacist marks it as Released for use with orders. I also added a side pane showing the total stock the pharmacy had for each medication, as a reminder of what they might need to make next, along with the better inventory reporting pharmacies had requested.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Batches%20tab.png" alt="Inventory table">
+    </div>
+
+    <h3>Inventory details</h3>
+    <p>The inventory/batch details page was built in a format similar to the existing order details and payout details pages, with tabs to break up the dense information.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20Batch%20information%20tab.png" alt="Inventory / batch details page, batch information tab">
+    </div>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20Orders%20tab.png" alt="Inventory / batch details page, orders tab">
+    </div>
+
+    <h3>Edge cases</h3>
+    <p>Rather than stopping at the happy path of how an order is fulfilled (add batch → assign order → verify → ship), I mapped out the failure and recovery states that might occur during pharmacy operations.</p>
+
+    <p><strong>Batch lifecycle states.</strong> Awaiting release, Released, Out of stock, Expiring soon, Expired, and Waste. Working with engineering, we planned a system where a batch nearing its Beyond Use Date (BUD) doesn't silently get used on a new order.</p>
+
+    <p><strong>Stock correction flows.</strong> If a pharmacist or technician logs waste stock (a broken vial, particulates, external orders) and that pushes assigned orders above the new remaining stock, the system prompts them to un-assign orders. It surfaces the most recently assigned orders automatically, but also lets them search and choose orders directly. This keeps inventory correct and prevents assigning orders that wouldn't actually be fulfilled.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20waste%20vials%20-%20unassign%20suggested%20orders.png" alt="Waste stock &amp; un-assign flow">
+    </div>
+
+    <p><strong>Guarded bulk actions.</strong> We discussed a global "un-assign all orders" action from the main Orders table, but I pushed back on it. If a batch's labels were already printed and physically attached to vials, a bulk un-assign could create a mismatch between what's tracked digitally and what's sitting in a pharmacy's fridge. We kept un-assign actions at the batch level and in the "Needs verification" Orders subtab views only, trading a small amount of convenience for meaningfully lower operational risk — especially since pharmacies didn't ask for or imply the need to un-assign all orders at once.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20Un-assign%20selected%20orders%20modal.png" alt="Un-assign selected orders modal">
+    </div>
+
+    <p>Despite seeming like small changes, these were all thought-out requirements. Each consideration came directly from a failure a pharmacist described during the user interviews, or was flagged as an operational risk during design reviews with the team.</p>
+
+    <h3>Order verification</h3>
+    <p>Once we knew data verification and product verification needed to be distinct steps, I redesigned the Verification tab around how pharmacists actually work. I split the "Verify order" button into two, and pinned the prescription document on one side while patient data (current vs. previous prescriptions, active medications, allergies, diagnoses) stayed pinned on the other. Pharmacists do this review almost exclusively on large desktop monitors, where they're comparing the two sides constantly. On smaller screens, the same content collapses into a single column rather than losing information.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Order%20details%20-%20pharmacist%20verification%20-%20big%20screen%20final%20(1).png" alt="Order verification — two-column layout">
+    </div>
+
+    <p><strong>Considerations with the backend:</strong></p>
+    <ul>
+      <li><strong>A verification safety net.</strong> If a pharmacist tries to mark data as verified without having verified every underlying table (allergies, medications, diagnoses), the system blocks the action and surfaces exactly which sections still need review before they can proceed.</li>
+      <li>Data verification can occur at any time, but the order needs to be assigned to a batch for product verification to happen.</li>
+    </ul>
+    <p>Automatic allergy and drug-interaction alerts are shown in these tables so a conflict can't be missed in a busy review queue.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/Pharmacist%20verification.png" alt="Allergy &amp; drug-interaction alerts">
+    </div>
+
+    <h2>Prototype</h2>
+    <p>Given how complex these workflows were, static specs weren't going to communicate the interactions clearly enough to engineering. I built a clickable prototype in Lovable — my first real use of an AI-assisted vibe-coding tool. Rather than using the generic generated screens, I fed the tool my existing design system and screens, then evaluated everything it produced against three checks:</p>
+    <ol>
+      <li>Did it reuse existing components instead of inventing new ones?</li>
+      <li>Did the interaction logic actually match the rules we'd defined (like a BUD-based sort order, or adding waste triggering the un-assign flow)?</li>
+      <li>Was it feasible given engineering's current data model? This last check is what surfaced the dosage-mismatch problem early on.</li>
+    </ol>
+    <p>The result was a prototype engineering could click through and question directly, which made the intended behavior and interactions clear.</p>
+    <p>Click <a href="https://pharmacy-v3.lovable.app" target="_blank">here</a> to view the prototype.</p>
+
+    <h2>Handoff &amp; development</h2>
+    <p>I stayed involved through development rather than handing off and disappearing. The biggest change during the build was that Mochi's dosing doesn't always map 1:1 to a pharmacy's actual products. For example, Mochi offers compounded tirzepatide at both 5.0 mg and 10.0 mg, but some pharmacies only stock 5.0 mg vials — two 5.0 mg vials would need to be assigned to a single 10.0 mg order instead. I added a product ID field with filtering to the inventory addition flow so pharmacies managing 20+ product IDs could handle this without confusion, then validated the fix directly with three pharmacies whose dosing I knew didn't line up cleanly with Mochi's. After adjusting field names and inline instructions, technicians and pharmacists confirmed they understood how to enter and assign inventory correctly.</p>
+    <div class="gallery cols-1">
+      <img src="../assets/images/pharmacy-portal/New%20batch%20-%20Product%20ID.png" alt="Updated inventory flow with product ID field">
+    </div>
+    <p>We also agreed to pilot the feature with a handful of pharmacies for a few weeks before full rollout, treating the early launch as another checkpoint for validation, not the finish line.</p>
+
+    <h2>Outcomes</h2>
+    <div class="stat-row">
+      <div><div class="stat-num">600+</div><div class="stat-label">Users across 90 pharmacies</div></div>
+      <div><div class="stat-num">100k+</div><div class="stat-label">Orders verified &amp; shipped / month</div></div>
+      <div><div class="stat-num">15 → 47</div><div class="stat-label">NPS, 3 months post-launch</div></div>
+    </div>
+    <ul>
+      <li>Features were implemented and delivered on a shortened timeline with no urgent post-launch fixes, due to involving engineering early and validating designs — like the pharmacy dosing mismatch — with real pharmacies before it shipped.</li>
+      <li>Directly tied to the program's stated goals of reducing order turnaround time and cutting the number of orders running past the 14-day late threshold, by removing the need to switch tools mid-fulfillment.</li>
+    </ul>
+
+    <h2>Reflection</h2>
+    <p>The hardest part of this project was that pharmacy workflows don't have clean comparisons anywhere else. I had to research e-commerce inventory systems, then adapt them to clinical and legal requirements that don't show up in those more generic products. I'm grateful to have worked with pharmacies willing and eager to give feedback on the features I work on — it kept my designs focused on what they truly needed. Bringing engineering in from the start, and using an interactive AI-assisted prototype to make the intended behavior tangible rather than describing it in a spec, meant the riskiest flows got tested with real pharmacies and real engineers well before launch, giving us a smooth rollout.</p>
+  </article>
+
+  <nav class="wrap cs-nav">
+    <a href="/#work">← Back to work</a>
+    <a href="data-catalog.html">Next: Data Catalog →</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-links">
+      <a href="mailto:hello@alexanderescalera.com">Email</a>
+      <a href="https://www.linkedin.com/in/alexander-escalera/">LinkedIn</a>
+      <a href="../assets/Alexander_Escalera_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="footer-note">© 2026 Alexander Escalera</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close">Close ✕</button>
+  <img src="" alt="">
+  <div class="lightbox-cap"></div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
