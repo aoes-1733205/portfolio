@@ -13,7 +13,7 @@
   --accent: #33526E;       /* steel blue — data / analytics */
   --accent-soft: #D9E4EC;
   --tag: #AD7D14;          /* marigold / goldenrod — sticky-note callback */
-  --tag-soft: #F7ECCF;
+  --tag-soft: #FCF6E4;
   --radius: 2px;
 
   --font-display: 'Manrope', sans-serif;
@@ -425,6 +425,11 @@ h1.hero-title {
   font-size: 0.95rem;
 }
 .callout strong { color: var(--accent); }
+.callout.callout-gold {
+  background: var(--tag-soft);
+  border-left-color: var(--tag);
+}
+.callout.callout-gold strong { color: var(--tag); }
 
 .stat-row {
   display: grid;
@@ -441,6 +446,7 @@ h1.hero-title {
   color: var(--accent);
   letter-spacing: -0.01em;
 }
+.stat-row-gold .stat-num { color: var(--tag); }
 .stat-label {
   font-family: var(--font-mono);
   font-size: 0.7rem;

@@ -55,7 +55,7 @@
     <p>I led discovery in two parts: understanding how pharmacy software works today, and understanding how our partner pharmacies actually work.</p>
 
     <h3>Competitive &amp; cross-industry research</h3>
-    <p>I first audited pharmacy-specific tools (Lifefile, PioneerRx) and found that nearly all of them supported prescription verification, but almost none had inventory management. To solve that part of the problem, I looked outside of healthcare products, studying how DoorDash, Amazon, and Shopify structure inventory — a product/catalog table paired with a separate stock table, each stock row tied back to a product ID.</p>
+    <p>I first audited pharmacy-specific tools (Lifefile, PioneerRx) and found that nearly all of them supported prescription verification, but almost none had inventory management. To solve that part of the problem, I looked outside of healthcare products, studying how DoorDash, Amazon, and Shopify structure inventory, all with a product/catalog table paired with a separate stock table, each stock row tied back to a product ID.</p>
     <details class="table-expand">
       <summary>Seller portal competitor analysis</summary>
       <div class="table-scroll">
@@ -267,7 +267,7 @@
     <h2>Validation</h2>
     <h3>Ethnographic interviews</h3>
     <p>Using the competitor analysis and prior user research, I put together initial designs to show pharmacies during interviews, since they prefer having a visual to go off of. I conducted semi-structured interviews with pharmacists at four pharmacies, each in a different state, since pharmacy regulations vary by state. I showed my initial designs at the end of each interview rather than the start, so their answers about their current process weren't influenced by what I'd already built. Each session ran about an hour and covered their real fulfillment, verification, and inventory workflows.</p>
-    <div class="callout"><strong>Key finding —</strong> every pharmacy we talked to ran an informal data verification step (technician-level, checking dosage/medication sense against the patient) before the legally required product verification (pharmacist-level, checking the filled product against the prescription right before shipping). My original design had treated these as one step; the research showed they needed to be distinct stages in the workflow.</div>
+    <div class="callout callout-gold"><strong>Key finding —</strong> every pharmacy we talked to ran an informal data verification step (technician-level, checking dosage/medication sense against the patient) before the legally required product verification (pharmacist-level, checking the filled product against the prescription right before shipping). My original design had treated these as one step; the research showed they needed to be distinct stages in the workflow.</div>
     <p>Other requests that came out of research:</p>
     <ul>
       <li>Better inventory reporting</li>
@@ -311,7 +311,7 @@
       <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20waste%20vials%20-%20unassign%20suggested%20orders.png" alt="Waste stock &amp; un-assign flow">
     </div>
 
-    <p><strong>Guarded bulk actions.</strong> We discussed a global "un-assign all orders" action from the main Orders table, but I pushed back on it. If a batch's labels were already printed and physically attached to vials, a bulk un-assign could create a mismatch between what's tracked digitally and what's sitting in a pharmacy's fridge. We kept un-assign actions at the batch level and in the "Needs verification" Orders subtab views only, trading a small amount of convenience for meaningfully lower operational risk — especially since pharmacies didn't ask for or imply the need to un-assign all orders at once.</p>
+    <p><strong>Guarded bulk actions.</strong> We discussed a global "un-assign all orders" action from the main Orders table, but I pushed back on it. If a batch's labels were already printed and physically attached to vials, a bulk un-assign could create a mismatch between what's tracked digitally and what's sitting in a pharmacy's fridge. We kept un-assign actions at the batch level and in the "Needs verification" Orders subtab views only, trading a small amount of convenience for lower operational risk, especially since pharmacies didn't ask for or imply the need to un-assign all orders at once.</p>
     <div class="gallery cols-1">
       <img src="../assets/images/pharmacy-portal/Batch%20details%20-%20Un-assign%20selected%20orders%20modal.png" alt="Un-assign selected orders modal">
     </div>
@@ -335,7 +335,7 @@
     </div>
 
     <h2>Prototype</h2>
-    <p>Given how complex these workflows were, static specs weren't going to communicate the interactions clearly enough to engineering. I built a clickable prototype in Lovable — my first real use of an AI-assisted vibe-coding tool. Rather than using the generic generated screens, I fed the tool my existing design system and screens, then evaluated everything it produced against three checks:</p>
+    <p>Given how complex these workflows were, static specs weren't going to communicate the interactions clearly enough to engineering. I built a clickable prototype in Lovable, my first real use of an AI-assisted vibe-coding tool. Rather than using the generic generated screens, I fed the tool my existing design system and screens, then evaluated everything it produced against three checks:</p>
     <ol>
       <li>Did it reuse existing components instead of inventing new ones?</li>
       <li>Did the interaction logic actually match the rules we'd defined (like a BUD-based sort order, or adding waste triggering the un-assign flow)?</li>
@@ -345,25 +345,25 @@
     <p>Click <a href="https://pharmacy-v3.lovable.app" target="_blank">here</a> to view the prototype.</p>
 
     <h2>Handoff &amp; development</h2>
-    <p>I stayed involved through development rather than handing off and disappearing. The biggest change during the build was that Mochi's dosing doesn't always map 1:1 to a pharmacy's actual products. For example, Mochi offers compounded tirzepatide at both 5.0 mg and 10.0 mg, but some pharmacies only stock 5.0 mg vials — two 5.0 mg vials would need to be assigned to a single 10.0 mg order instead. I added a product ID field with filtering to the inventory addition flow so pharmacies managing 20+ product IDs could handle this without confusion, then validated the fix directly with three pharmacies whose dosing I knew didn't line up cleanly with Mochi's. After adjusting field names and inline instructions, technicians and pharmacists confirmed they understood how to enter and assign inventory correctly.</p>
+    <p>I stayed involved through development rather than handing off and disappearing. The biggest change during the build was that Mochi's dosing doesn't always map 1:1 to a pharmacy's actual products. For example, Mochi offers compounded tirzepatide at both 5.0 mg and 10.0 mg, but some pharmacies only stock 5.0 mg vials. Two 5.0 mg vials would need to be assigned to a single 10.0 mg order instead. I added a product ID field with filtering to the inventory addition flow so pharmacies managing 20+ product IDs could handle this without confusion, then validated the fix directly with three pharmacies whose dosing I knew didn't line up cleanly with Mochi's. After adjusting field names and inline instructions, technicians and pharmacists confirmed they understood how to enter and assign inventory correctly.</p>
     <div class="gallery cols-1">
       <img src="../assets/images/pharmacy-portal/New%20batch%20-%20Product%20ID.png" alt="Updated inventory flow with product ID field">
     </div>
     <p>We also agreed to pilot the feature with a handful of pharmacies for a few weeks before full rollout, treating the early launch as another checkpoint for validation, not the finish line.</p>
 
     <h2>Outcomes</h2>
-    <div class="stat-row">
+    <div class="stat-row stat-row-gold">
       <div><div class="stat-num">600+</div><div class="stat-label">Users across 90 pharmacies</div></div>
       <div><div class="stat-num">100k+</div><div class="stat-label">Orders verified &amp; shipped / month</div></div>
       <div><div class="stat-num">15 → 47</div><div class="stat-label">NPS, 3 months post-launch</div></div>
     </div>
     <ul>
-      <li>Features were implemented and delivered on a shortened timeline with no urgent post-launch fixes, due to involving engineering early and validating designs — like the pharmacy dosing mismatch — with real pharmacies before it shipped.</li>
+      <li>Features were implemented and delivered on a shortened timeline with no urgent post-launch fixes, due to involving engineering early and validating designs (like the pharmacy dosing mismatch) with real pharmacies before it shipped.</li>
       <li>Directly tied to the program's stated goals of reducing order turnaround time and cutting the number of orders running past the 14-day late threshold, by removing the need to switch tools mid-fulfillment.</li>
     </ul>
 
     <h2>Reflection</h2>
-    <p>The hardest part of this project was that pharmacy workflows don't have clean comparisons anywhere else. I had to research e-commerce inventory systems, then adapt them to clinical and legal requirements that don't show up in those more generic products. I'm grateful to have worked with pharmacies willing and eager to give feedback on the features I work on — it kept my designs focused on what they truly needed. Bringing engineering in from the start, and using an interactive AI-assisted prototype to make the intended behavior tangible rather than describing it in a spec, meant the riskiest flows got tested with real pharmacies and real engineers well before launch, giving us a smooth rollout.</p>
+    <p>The hardest part of this project was that pharmacy workflows don't have clean comparisons anywhere else. I had to research e-commerce inventory systems, then adapt them to clinical and legal requirements that don't show up in those more generic products. I'm grateful to have worked with pharmacies willing and eager to give feedback on the features I work on. It kept my designs focused on what they truly needed. Bringing engineering in from the start, and using an interactive AI-assisted prototype to make the intended behavior tangible rather than describing it in a spec, meant the riskiest flows got tested with real pharmacies and real engineers well before launch, giving us a smooth rollout.</p>
   </article>
 
   <nav class="wrap cs-nav">
